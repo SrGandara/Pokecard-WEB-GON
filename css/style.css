@@ -73,7 +73,7 @@ main {
 
     background-position: center;
     background-size: cover;
-    background-image: url(/img/fondo_banner_2.jpg);
+    background-image: URL(../img/fondo_banner_2.jpg);
 
     width: 100%;
 
@@ -196,7 +196,7 @@ input:nth-of-type(1):checked+div div.item img {
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-image: url(/img/fondo_banner_2.jpg);
+    background-image: URL(../img/fondo_banner_2.jpg);
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -208,7 +208,7 @@ input:nth-of-type(1):checked+div div.item img {
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-image: url(/img/fondo_banner.jpg);
+    background-image: URL(../img/fondo_banner.jpg);
     display: flex;
     flex-direction: row;
     width: 100%;
