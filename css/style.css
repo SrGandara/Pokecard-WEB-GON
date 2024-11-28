@@ -311,6 +311,7 @@ footer {
     flex-direction: column;
     gap: 2rem;
     background-image: url(../img/pokefondo_contacte.jpg);
+    padding-bottom: 5rem;
 }
 
 #maps {
@@ -335,11 +336,16 @@ footer {
     background-color: #333;
     color: white;
     border-radius: 5px;
+    padding: 2rem;
+}
+
+.textContacte {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5em;
 }
 #infoText:hover {
     color: #c89642;
     transition: 0.75s;
-    scale: 90%;
 }
 
 .contact-container {
