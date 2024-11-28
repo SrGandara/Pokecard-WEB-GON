@@ -1,5 +1,13 @@
+main {
+    background-image: url("/img/pokefondo_contacte.jpg");
+}
+
+.aaa {
+    height: 100vh;
+}
+
 .a {
-    width: 33%;
+    width: 20%;
     height: 50%;
     display: flex;
     justify-content: center;
@@ -14,27 +22,21 @@
 
     width: 100%;
     height: fit-content;
-    overflow: hidden;
+    position: relative;
 }
 
 .rotacion {
-    height: 25%;
-    width: 33%;
-}
-
-.cartaP .rotacion {
     width: calc(100% / 3);
     height: calc(100% / 4);
 
-    background-color: red;
-
     display: inline-block;
 
-    opacity: .5;
+    opacity: 0;
 
     gap: 20px;
 
     z-index: 1;
+    position: absolute;
 }
 
 .cartaP img {

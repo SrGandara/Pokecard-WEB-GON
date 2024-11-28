@@ -52,17 +52,145 @@ header ul {
     height: 100%;
 }
 
+
 main {
     height: fit-content;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
     width: 100%;
-    height: 100vh
+}
+
+.ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background-position: center;
+    background-size: cover;
+    background-image: url(/img/fondo_banner_2.jpg);
+
+    width: 100%;
+
+    height: 15rem;
+
+    color: white;
+}
+
+.ad p {
+    text-align: center;
+    font-size: xx-large;
+    -webkit-text-stroke: 1px #F8F8F8;
+    text-shadow: 0px 2px 4px yellow;
+}
+
+.ad a {
+    text-align: center;
+}
+
+.ad button {
+    margin-top: 4em;
+    padding: 1em;
+    text-align: center;
+    border: none;   
+    border-radius: 8px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+.ad button:hover {
+    color: #c89642;
+    transition: 0.75s;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
+
+.t:enabled {
+    border-color: #007bff;
+    background-color: #e0f0ff;
+    color: #007bff;
+    width: 100%;
+}
+
+/* -------------- ANIMACION ----------------------*/
+
+div#carousel {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 3;
+    --middle: 2;
+    --position: 2;
+    pointer-events: none;
+}
+
+.item {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+
+    z-index: calc((var(--position) - var(--abs)));
+}
+
+.item:nth-child(1) {
+    --offset: 1;
+}
+
+.item:nth-child(2) {
+    --offset: 2;
+}
+
+.item:nth-child(3) {
+    --offset: 3;
+}
+
+input:nth-of-type(1):checked~div#carousel {
+    --position: 1;
+}
+
+input:nth-of-type(2):checked~div#carousel {
+    --position: 2;
+}
+
+input:nth-of-type(3):checked~div#carousel {
+    --position: 3;
+}
+
+input:nth-of-type(1):checked+div div.item img {
+    box-shadow: 1px 2px 31px 4px rgba(0, 0, 0, 0.75);
+
+}
+
+.item img {
+    width: 100%;
+    height: fit-content;
+    border-radius: 16px;
+}
+
+/* -------------- FIN ANIMACION ----------------------*/
+
+
 
 .banner {
     height: 100%;
@@ -75,7 +203,8 @@ main {
     justify-content: center;
     align-items: center;
 }
-.banner2{
+
+.banner2 {
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -86,6 +215,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 nav ul li {
     margin-right: 1em;
 }
@@ -113,7 +243,6 @@ footer {
     background: #333;
     color: white;
     position: relative;
-    margin-top: 10%;
     width: 100%;
 }
 
@@ -147,6 +276,8 @@ footer {
     align-items: center;
 
     position: relative;
+    margin-right: 2rem;
+    margin-left: 2rem;
 }
 
 .redicon img,
@@ -163,20 +294,6 @@ footer {
     border-color: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
 }
 
-#twitter-logo:hover {
-    display: none;
-    opacity: 1;
-}
-
-.redDeco:hover {
-    z-index: 99;
-    mask-image: url("../img/ico/icons8-instagram.svg");
-
-    background: #833ab4;
-    background: linear-gradient(to right,
-            #833ab4, #fd1d1d, #fcb045);
-}
-
 .cartas {
     display: flex;
 
@@ -187,6 +304,42 @@ footer {
     gap: 20px;
 
     height: 100%;
+}
+
+#contact-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-image: url(../img/pokefondo_contacte.jpg);
+}
+
+#maps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+#info {
+    display: flex;
+    flex-direction: row;
+}
+
+#infoText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
+#infoText:hover {
+    color: #c89642;
+    transition: 0.75s;
+    scale: 90%;
 }
 
 .contact-container {
@@ -201,11 +354,6 @@ footer {
     height: 25em;
 }
 
-.contact-container:hover {
-    transition: 1s;
-    scale: 115%;
-}
-
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -215,12 +363,29 @@ footer {
     margin-top: 1.5em
 }
 
+.precio {
+    color: red;
+    font-size: xx-large;
+    font-weight: bold;
+    position: absolute;
+    top: 2%;
+    left: 70%;
+}
+
+.descripcionCarta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .compra {
     color: #c89642;
     background-color: #333;
     padding: 1rem;
     font-weight: bold;
     font-size: 20px;
+    border-radius: 8px;
 }
 
 .compra:hover {
@@ -261,7 +426,7 @@ footer {
 }
 
 .carta a img:hover {
-    height: 75%;
+    height: 65%;
 }
 
 /* WEB RESPONSIVE */
