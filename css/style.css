@@ -1,0 +1,612 @@
+:root {
+    --rotacion: 20deg;
+    --rotacion-s: 5deg;
+    --rotacion-m: 10deg;
+}
+
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+
+    height: 8vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    text-decoration: none;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+#logo {
+    width: 50%;
+    height: fit-content;
+}
+
+.hamburgesa {
+    height: 100%;
+}
+
+.hamimg {
+    filter: invert(100%);
+    width: fit-content;
+    height: 100%;
+}
+
+
+main {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background-position: center;
+    background-size: cover;
+    background-image: url(/img/fondo_banner_2.jpg);
+
+    width: 100%;
+
+    height: 15rem;
+
+    color: white;
+}
+
+.ad p {
+    text-align: center;
+    font-size: xx-large;
+    -webkit-text-stroke: 1px #F8F8F8;
+    text-shadow: 0px 2px 4px yellow;
+}
+
+.ad a {
+    text-align: center;
+}
+
+.ad button {
+    margin-top: 4em;
+    padding: 1em;
+    text-align: center;
+    border: none;   
+    border-radius: 8px;
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+.ad button:hover {
+    color: #c89642;
+    transition: 0.75s;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.t:enabled {
+    border-color: #007bff;
+    background-color: #e0f0ff;
+    color: #007bff;
+    width: 100%;
+}
+
+/* -------------- ANIMACION ----------------------*/
+
+div#carousel {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 3;
+    --middle: 2;
+    --position: 2;
+    pointer-events: none;
+}
+
+.item {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+
+    z-index: calc((var(--position) - var(--abs)));
+}
+
+.item:nth-child(1) {
+    --offset: 1;
+}
+
+.item:nth-child(2) {
+    --offset: 2;
+}
+
+.item:nth-child(3) {
+    --offset: 3;
+}
+
+input:nth-of-type(1):checked~div#carousel {
+    --position: 1;
+}
+
+input:nth-of-type(2):checked~div#carousel {
+    --position: 2;
+}
+
+input:nth-of-type(3):checked~div#carousel {
+    --position: 3;
+}
+
+input:nth-of-type(1):checked+div div.item img {
+    box-shadow: 1px 2px 31px 4px rgba(0, 0, 0, 0.75);
+
+}
+
+.item img {
+    width: 100%;
+    height: fit-content;
+    border-radius: 16px;
+}
+
+/* -------------- FIN ANIMACION ----------------------*/
+
+
+
+.banner {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(/img/fondo_banner_2.jpg);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner2 {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(/img/fondo_banner.jpg);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+nav ul li a:visited {
+    color: white;
+    text-transform: none;
+}
+
+nav ul li a:hover {
+    color: #c89642;
+    transition: 0.75s;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    background: #333;
+    color: white;
+    position: relative;
+    width: 100%;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    margin-left: 1em;
+}
+
+#cerca {
+    width: 35px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.redicon {
+    width: fit-content;
+    height: fit-content;
+
+    filter: invert();
+
+    border: 1px solid #000000;
+    border-radius: 100%;
+
+    width: 6rem;
+    height: 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.redicon img,
+.redicon div {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+}
+
+.redicon:hover {
+    filter: none;
+    border-color: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+}
+
+.cartas {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    height: 100%;
+}
+
+#contact-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-image: url(../img/pokefondo_contacte.jpg);
+}
+
+#maps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+#info {
+    display: flex;
+    flex-direction: row;
+}
+
+#infoText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
+#infoText:hover {
+    color: #c89642;
+    transition: 0.75s;
+    scale: 90%;
+}
+
+.contact-container {
+    background-color: #333;
+    color: #c89642;
+    margin-top: 6em;
+    padding: 2em 3em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 50em;
+    height: 25em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacte-desc {
+    margin-top: 1.5em
+}
+
+.precio {
+    color: red;
+    font-size: xx-large;
+    font-weight: bold;
+    position: absolute;
+    top: 2%;
+    left: 70%;
+}
+
+.descripcionCarta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.compra {
+    color: #c89642;
+    background-color: #333;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.compra:hover {
+    color: #333;
+    background-color: #c89642;
+    transition: 0.75s;
+}
+
+.caixa-descripcio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.carta {
+    background-color: #333(255, 255, 255, 0);
+    border-radius: 18px;
+
+    text-align: center;
+
+    height: 30rem;
+
+    display: block;
+    position: relative;
+}
+
+.separador {
+    border: 1px solid black;
+    background-color: #333;
+}
+
+.carta a img {
+    height: 70%;
+    width: fit-content;
+    margin: 2em;
+}
+
+.carta a img:hover {
+    height: 65%;
+}
+
+/* WEB RESPONSIVE */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+.col-0 {
+    width: 0%;
+    overflow: hidden;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 835px) {
+    .col-md-0 {
+        width: 0%;
+        overflow: hidden;
+    }
+
+    .col-md-1 {
+        width: 8.33%;
+    }
+
+    .col-md-2 {
+        width: 16.66%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+
+    .col-md-5 {
+        width: 41.66%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.33%;
+    }
+
+    .col-md-8 {
+        width: 66.66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.33%;
+    }
+
+    .col-md-11 {
+        width: 91.66%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1378px) {
+    .col-lg-0 {
+        width: 0%;
+        overflow: hidden;
+    }
+
+    .col-lg-1 {
+        width: 8.33%;
+    }
+
+    .col-lg-2 {
+        width: 16.66%;
+    }
+
+    .col-lg-3 {
+        width: 25%;
+    }
+
+    .col-lg-4 {
+        width: 33.33%;
+    }
+
+    .col-lg-5 {
+        width: 41.66%;
+    }
+
+    .col-lg-6 {
+        width: 50%;
+    }
+
+    .col-lg-7 {
+        width: 58.33%;
+    }
+
+    .col-lg-8 {
+        width: 66.66%;
+    }
+
+    .col-lg-9 {
+        width: 75%;
+    }
+
+    .col-lg-10 {
+        width: 83.33%;
+    }
+
+    .col-lg-11 {
+        width: 91.66%;
+    }
+
+    .col-lg-12 {
+        width: 100%;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

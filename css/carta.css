@@ -1,0 +1,182 @@
+main {
+    background-image: url("/img/pokefondo_contacte.jpg");
+}
+
+.aaa {
+    height: 100vh;
+}
+
+.a {
+    width: 20%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartaP {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+.rotacion {
+    width: calc(100% / 3);
+    height: calc(100% / 4);
+
+    display: inline-block;
+
+    opacity: 0;
+
+    gap: 20px;
+
+    z-index: 1;
+    position: absolute;
+}
+
+.cartaP img {
+    border-radius: 8px;
+    width: 100%;
+    --rotacionX: 0deg;
+    --rotacionY: 0deg;
+
+    transform: perspective(600px) rotateY(var(--rotacionY)) rotateX(var(--rotacionX));
+    transition: transform 300ms;
+}
+
+ 
+.rotacion:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.rotacion:nth-child(1):hover~img {
+    --rotacionX: var(--rotacion);
+    --rotacionY: calc(var(--rotacion) * -1);
+}
+
+.rotacion:nth-child(2) {
+    top: 0;
+    left: calc(100% / 3);
+    background-color: #00ff00;
+}
+
+.rotacion:nth-child(2):hover~img {
+    --rotacionX: calc(var(--rotacion));
+    --rotacionY: 0;
+}
+
+.rotacion:nth-child(3) {
+    top: 0;
+    left: calc((100% / 3) * 2);
+    background-color: #0000ff;
+}
+
+.rotacion:nth-child(3):hover~img {
+    --rotacionX: calc(var(--rotacion));
+    --rotacionY: calc(var(--rotacion));
+}
+
+.rotacion:nth-child(4) {
+    top: calc(100% / 4);
+    left: 0;
+    background-color: #54248b;
+}
+
+.rotacion:nth-child(4):hover~img {
+    --rotacionX: calc(var(--rotacion-s));
+    --rotacionY: calc(var(--rotacion) * -1);
+}
+
+.rotacion:nth-child(5) {
+    top: calc(100% / 4);
+    left: calc(100% / 3);
+    background-color: #00ffff;
+}
+
+.rotacion:nth-child(5):hover~img {
+    --rotacionX: calc(var(--rotacion-s));
+    --rotacionY: 0;
+}
+
+.rotacion:nth-child(6) {
+    top: calc(100% / 4);
+    left: calc((100% / 3) * 2);
+    background-color: #ff00ff;
+}
+
+.rotacion:nth-child(6):hover~img {
+    --rotacionX: var(--rotacion-s);
+    --rotacionY: calc(var(--rotacion));
+}
+
+.rotacion:nth-child(7) {
+    top: calc((100% / 4) * 2);
+    left: 0;
+    background-color: #ffff10;
+}
+
+.rotacion:nth-child(7):hover~img {
+    --rotacionX: calc(var(--rotacion-s) * -1);
+    --rotacionY: calc(var(--rotacion) * -1);
+}
+
+.rotacion:nth-child(8) {
+    top: calc((100% / 4) * 2);
+    left: calc(100% / 3);
+    background-color: #2a770e;
+}
+
+.rotacion:nth-child(8):hover~img {
+    --rotacionX: calc(var(--rotacion-s) * -1);
+    --rotacionY: 0;
+}
+
+.rotacion:nth-child(9) {
+    top: calc((100% / 4) * 2);
+    left: calc((100% / 3) * 2);
+    background-color: #37408f;
+}
+
+.rotacion:nth-child(9):hover~img {
+    --rotacionX: calc(var(--rotacion-s) * -1);
+    --rotacionY: calc(var(--rotacion));
+}
+
+.rotacion:nth-child(10) {
+    top: calc((100% / 4) * 3);
+    left: 0;
+    background-color: #72267c;
+}
+
+.rotacion:nth-child(10):hover~img {
+    --rotacionX: calc(var(--rotacion) * -1);
+    --rotacionY: calc(var(--rotacion) * -1);
+}
+
+.rotacion:nth-child(11) {
+    top: calc((100% / 4) * 3);
+    left: calc(100% / 3);
+    background-color: #883131;
+}
+
+.rotacion:nth-child(11):hover~img {
+    --rotacionX: calc(var(--rotacion) * -1);
+    --rotacionY: 0;
+}
+
+.rotacion:nth-child(12) {
+    top: calc((100% / 4) * 3);
+    left: calc((100% / 3) * 2);
+    background-color: #618822;
+}
+
+.rotacion:nth-child(12):hover~img {
+    --rotacionX: calc(var(--rotacion) * -1);
+    --rotacionY: calc(var(--rotacion));
+}
